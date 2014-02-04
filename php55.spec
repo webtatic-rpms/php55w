@@ -93,7 +93,7 @@ Name: %{?scl_prefix}php
 Name: php55w
 %endif
 Version: 5.5.8
-Release: 1%{?dist}
+Release: 2%{?dist}
 # All files licensed under PHP version 3.01, except
 # Zend is licensed under Zend
 # TSRM is licensed under BSD
@@ -1855,6 +1855,12 @@ fi
 %files mysqlnd -f files.mysqlnd
 
 %changelog
+* Tue Feb 12 2014 Andy Thompson <andy@webtatic.com> - 5.5.8-2
+- Update from el7 php package.
+- Updates include dtrace probes, mhash extension emulation
+- Support el7 builds
+- Update to support SCL
+
 * Sun Jan 12 2014 Andy Thompson <andy@webtatic.com> - 5.5.8-1
 - update to php-5.5.8
 
