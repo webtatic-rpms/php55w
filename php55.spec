@@ -22,7 +22,7 @@
 %global pharver     2.0.2
 %global zipver      1.11.0
 %global jsonver     1.2.1
-%global opcachever  7.0.3-dev
+%global opcachever  7.0.3
 
 # Adds -z now to the linker flags
 %global _hardened_build 1
@@ -92,8 +92,8 @@ Name: %{?scl_prefix}php
 %else
 Name: php55w
 %endif
-Version: 5.5.8
-Release: 2%{?dist}
+Version: 5.5.9
+Release: 1%{?dist}
 # All files licensed under PHP version 3.01, except
 # Zend is licensed under Zend
 # TSRM is licensed under BSD
@@ -1855,7 +1855,8 @@ fi
 %files mysqlnd -f files.mysqlnd
 
 %changelog
-* Tue Feb 12 2014 Andy Thompson <andy@webtatic.com> - 5.5.8-2
+* Thu Feb 06 2014 Andy Thompson <andy@webtatic.com> - 5.5.9-1
+- update to php-5.5.9
 - Update from el7 php package.
 - Updates include dtrace probes, mhash extension emulation
 - Support el7 builds
