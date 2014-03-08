@@ -18,7 +18,7 @@
 %global zendver     20121212
 %global pdover      20080721
 # Extension version
-%global fileinfover 1.0.5-dev
+%global fileinfover 1.0.5
 %global pharver     2.0.2
 %global zipver      1.11.0
 %global jsonver     1.2.1
@@ -92,7 +92,7 @@ Name: %{?scl_prefix}php
 %else
 Name: php55w
 %endif
-Version: 5.5.9
+Version: 5.5.10
 Release: 1%{?dist}
 # All files licensed under PHP version 3.01, except
 # Zend is licensed under Zend
@@ -1855,6 +1855,9 @@ fi
 %files mysqlnd -f files.mysqlnd
 
 %changelog
+* Sat Mar 08 2014 Andy Thompson <andy@webtatic.com> - 5.5.10-1
+- update to php-5.5.10
+
 * Thu Feb 06 2014 Andy Thompson <andy@webtatic.com> - 5.5.9-1
 - update to php-5.5.9
 - Update from el7 php package.
