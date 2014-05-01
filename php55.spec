@@ -92,7 +92,7 @@ Name: %{?scl_prefix}php
 %else
 Name: php55w
 %endif
-Version: 5.5.11
+Version: 5.5.12
 Release: 1%{?dist}
 # All files licensed under PHP version 3.01, except
 # Zend is licensed under Zend
@@ -1855,6 +1855,9 @@ fi
 %files mysqlnd -f files.mysqlnd
 
 %changelog
+* Thu May 01 2014 Andy Thompson <andy@webtatic.com> - 5.5.12-1
+- update to php-5.5.12
+
 * Sun Apr 06 2014 Andy Thompson <andy@webtatic.com> - 5.5.11-1
 - update to php-5.5.11
 - replace opcache version constant with new constant
