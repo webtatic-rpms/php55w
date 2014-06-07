@@ -93,7 +93,7 @@ Name: %{?scl_prefix}php
 Name: php55w
 %endif
 Version: 5.5.13
-Release: 1%{?dist}
+Release: 2%{?dist}
 # All files licensed under PHP version 3.01, except
 # Zend is licensed under Zend
 # TSRM is licensed under BSD
@@ -142,6 +142,7 @@ Patch48: php-5.5.0-icuconfig.patch
 # Fixes for tests
 
 # Bug fixes
+Patch100: php-5.5.13-unserialize-bc.patch
 
 # Security fixes
 
@@ -968,6 +969,8 @@ support for using the enchant library to PHP.
 %patch46 -p1 -b .fixheader
 %patch47 -p1 -b .phpinfo
 %patch48 -p1 -b .icuconfig
+
+%patch100 -p1 -b .unserialize-bc
 
 # Prevent %%doc confusion over LICENSE files
 cp Zend/LICENSE Zend/ZEND_LICENSE
@@ -1855,6 +1858,9 @@ fi
 %files mysqlnd -f files.mysqlnd
 
 %changelog
+* Sat Jun 07 2014 Andy Thompson <andy@webtatic.com> - 5.5.13-2
+- Add patch for regression in bug #67072
+
 * Sat May 31 2014 Andy Thompson <andy@webtatic.com> - 5.5.13-1
 - update to php-5.5.13
 - Update the php-fpm config comment to state listen.mode default is 0660
