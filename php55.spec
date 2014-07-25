@@ -92,7 +92,7 @@ Name: %{?scl_prefix}php
 %else
 Name: php55w
 %endif
-Version: 5.5.14
+Version: 5.5.15
 Release: 1%{?rcver:.%{rcver}}%{?dist}
 # All files licensed under PHP version 3.01, except
 # Zend is licensed under Zend
@@ -1855,6 +1855,9 @@ fi
 %files mysqlnd -f files.mysqlnd
 
 %changelog
+* Fri Jul 25 2014 Andy Thompson <andy@webtatic.com> - 5.5.15-1
+- update to php-5.5.15
+
 * Fri Jun 27 2014 Andy Thompson <andy@webtatic.com> - 5.5.14-1
 - update to php-5.5.14
 - remove patch for regression in bug #67072 now fixed upstream
