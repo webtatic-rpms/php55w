@@ -86,14 +86,16 @@
 %global db_devel  libdb-devel
 %endif
 
+%global rcver RC1
+
 Summary: PHP scripting language for creating dynamic web sites
 %if 0%{?scl:1}
 Name: %{?scl_prefix}php
 %else
 Name: php55w
 %endif
-Version: 5.5.15
-Release: 1%{?rcver:.%{rcver}}%{?dist}
+Version: 5.5.16
+Release: 0.1%{?rcver:.%{rcver}}%{?dist}
 # All files licensed under PHP version 3.01, except
 # Zend is licensed under Zend
 # TSRM is licensed under BSD
@@ -1855,6 +1857,9 @@ fi
 %files mysqlnd -f files.mysqlnd
 
 %changelog
+* Fri Aug 15 2014 Andy Thompson <andy@webtatic.com> - 5.5.15-0.1RC1
+- update to php-5.5.16RC1
+
 * Fri Jul 25 2014 Andy Thompson <andy@webtatic.com> - 5.5.15-1
 - update to php-5.5.15
 
