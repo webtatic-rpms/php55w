@@ -92,8 +92,8 @@ Name: %{?scl_prefix}php
 %else
 Name: php55w
 %endif
-Version: 5.5.17
-Release: 2%{?rcver:.%{rcver}}%{?dist}
+Version: 5.5.18
+Release: 1%{?rcver:.%{rcver}}%{?dist}
 # All files licensed under PHP version 3.01, except
 # Zend is licensed under Zend
 # TSRM is licensed under BSD
@@ -1864,6 +1864,9 @@ fi
 %files mysqlnd -f files.mysqlnd
 
 %changelog
+* Thu Oct 16 2014 Andy Thompson <andy@webtatic.com> - 5.5.18-1
+- update to php-5.5.18
+
 * Thu Oct 02 2014 Andy Thompson <andy@webtatic.com> - 5.5.17-2
 - Add tmpfiles.d config to recreate run directory
 
