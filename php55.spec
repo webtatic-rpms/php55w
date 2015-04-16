@@ -92,7 +92,7 @@ Name: %{?scl_prefix}php
 %else
 Name: php55w
 %endif
-Version: 5.5.23
+Version: 5.5.24
 Release: 1%{?rcver:.%{rcver}}%{?dist}
 # All files licensed under PHP version 3.01, except
 # Zend is licensed under Zend
@@ -1864,6 +1864,9 @@ fi
 %files mysqlnd -f files.mysqlnd
 
 %changelog
+* Thu Apr 16 2015 Andy Thompson <andy@webtatic.com> - 5.5.24-1
+- update to php-5.5.24
+
 * Sat Mar 21 2015 Andy Thompson <andy@webtatic.com> - 5.5.23-1
 - update to php-5.5.23
 
