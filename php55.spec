@@ -92,7 +92,7 @@ Name: %{?scl_prefix}php
 %else
 Name: php55w
 %endif
-Version: 5.5.27
+Version: 5.5.28
 Release: 1%{?rcver:.%{rcver}}%{?dist}
 # All files licensed under PHP version 3.01, except
 # Zend is licensed under Zend
@@ -101,7 +101,7 @@ License: PHP and Zend and BSD
 Group: Development/Languages
 URL: http://www.php.net/
 
-Source0: http://www.php.net/distributions/php-%{version}%{?rcver}.tar.bz2
+Source0: https://secure.php.net/distributions/php-%{version}%{?rcver}.tar.bz2
 Source1: php.conf
 Source2: php.ini
 Source3: macros.php
@@ -1864,7 +1864,10 @@ fi
 %files mysqlnd -f files.mysqlnd
 
 %changelog
-* Thu Jun 11 2015 Andy Thompson <andy@webtatic.com> - 5.5.27-1
+* Sun Aug 09 2015 Andy Thompson <andy@webtatic.com> - 5.5.28-1
+- update to php-5.5.28
+
+* Fri Jul 10 2015 Andy Thompson <andy@webtatic.com> - 5.5.27-1
 - update to php-5.5.27
 
 * Thu Jun 11 2015 Andy Thompson <andy@webtatic.com> - 5.5.26-1
