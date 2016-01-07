@@ -106,8 +106,8 @@ Name: %{?scl_prefix}php
 %else
 Name: php55w
 %endif
-Version: 5.5.30
-Release: 2%{?rcver:.%{rcver}}%{?dist}
+Version: 5.5.31
+Release: 1%{?rcver:.%{rcver}}%{?dist}
 # All files licensed under PHP version 3.01, except
 # Zend is licensed under Zend
 # TSRM is licensed under BSD
@@ -1865,6 +1865,9 @@ fi
 %files mysqlnd -f files.mysqlnd
 
 %changelog
+* Thu Jan 07 2016 Andy Thompson <andy@webtatic.com> - 5.5.31-1
+- update to php-5.5.31
+
 * Sun Oct 11 2015 Andy Thompson <andy@webtatic.com> - 5.5.30-2
 - Add php-fpm conditional restart on EL < 7
 - Simplify spec conditionals
