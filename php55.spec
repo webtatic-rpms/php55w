@@ -107,7 +107,7 @@ Name: %{?scl_prefix}php
 Name: php55w
 %endif
 Version: 5.5.31
-Release: 1%{?rcver:.%{rcver}}%{?dist}
+Release: 2%{?rcver:.%{rcver}}%{?dist}
 # All files licensed under PHP version 3.01, except
 # Zend is licensed under Zend
 # TSRM is licensed under BSD
@@ -152,6 +152,7 @@ Patch46: php-5.4.9-fixheader.patch
 # drop "Configure command" from phpinfo output
 Patch47: php-5.4.9-phpinfo.patch
 Patch48: php-5.5.0-icuconfig.patch
+Patch49: php-5.5.19-curltlsconst.patch
 
 # Fixes for tests
 
@@ -982,6 +983,9 @@ support for using the enchant library to PHP.
 %patch46 -p1 -b .fixheader
 %patch47 -p1 -b .phpinfo
 %patch48 -p1 -b .icuconfig
+%if 0%{?rhel} >= 6
+%patch49 -p1 -b .curltlsconst
+%endif
 
 # Prevent %%doc confusion over LICENSE files
 cp Zend/LICENSE Zend/ZEND_LICENSE
@@ -1865,6 +1869,9 @@ fi
 %files mysqlnd -f files.mysqlnd
 
 %changelog
+* Sun Jan 31 2016 Andy Thompson <andy@webtatic.com> - 5.5.31-2
+- Add curltlsconst patch to introduce backported curl constants
+
 * Thu Jan 07 2016 Andy Thompson <andy@webtatic.com> - 5.5.31-1
 - update to php-5.5.31
 
