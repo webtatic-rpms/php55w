@@ -106,8 +106,8 @@ Name: %{?scl_prefix}php
 %else
 Name: php55w
 %endif
-Version: 5.5.31
-Release: 2%{?rcver:.%{rcver}}%{?dist}
+Version: 5.5.32
+Release: 1%{?rcver:.%{rcver}}%{?dist}
 # All files licensed under PHP version 3.01, except
 # Zend is licensed under Zend
 # TSRM is licensed under BSD
@@ -1869,6 +1869,9 @@ fi
 %files mysqlnd -f files.mysqlnd
 
 %changelog
+* Thu Feb 04 2016 Andy Thompson <andy@webtatic.com> - 5.5.32-1
+- update to php-5.5.32
+
 * Sun Jan 31 2016 Andy Thompson <andy@webtatic.com> - 5.5.31-2
 - Add curltlsconst patch to introduce backported curl constants
 
