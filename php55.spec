@@ -109,7 +109,7 @@ Name: %{?scl_prefix}php
 %else
 Name: php55w
 %endif
-Version: 5.5.37
+Version: 5.5.38
 Release: 1%{?rcver:.%{rcver}}%{?dist}
 # All files licensed under PHP version 3.01, except
 # Zend is licensed under Zend
@@ -1872,6 +1872,9 @@ fi
 %files mysqlnd -f files.mysqlnd
 
 %changelog
+* Thu Jul 21 2016 Andy Thompson <andy@webtatic.com> - 5.5.38-1
+- update to php-5.5.38
+
 * Thu Jun 23 2016 Andy Thompson <andy@webtatic.com> - 5.5.37-1
 - update to php-5.5.37
 - move conflicts version to top of spec
