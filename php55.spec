@@ -110,7 +110,7 @@ Name: %{?scl_prefix}php
 Name: php55w
 %endif
 Version: 5.5.38
-Release: 1%{?rcver:.%{rcver}}%{?dist}
+Release: 2%{?rcver:.%{rcver}}%{?dist}
 # All files licensed under PHP version 3.01, except
 # Zend is licensed under Zend
 # TSRM is licensed under BSD
@@ -162,6 +162,27 @@ Patch49: php-5.5.19-curltlsconst.patch
 # Bug fixes
 
 # Security fixes
+Patch100: php-5.5.38-bug66502.patch
+Patch101: php-5.5.38-bug70436.patch
+Patch102: php-5.5.38-bug72142.patch
+Patch103: php-5.5.38-bug72627.patch
+Patch104: php-5.5.38-bug72681.patch
+Patch105: php-5.5.38-bug72697.patch
+Patch106: php-5.5.38-bug72708.patch
+Patch107: php-5.5.38-bug72710.patch
+Patch108: php-5.5.38-bug72730.patch
+Patch109: php-5.5.38-bug72749.patch
+Patch110: php-5.5.38-bug72750.patch
+Patch111: php-5.5.38-bug72771.patch
+# includes #72799
+Patch112: php-5.5.38-bug72790.patch
+Patch113: php-5.5.38-bug72807.patch
+Patch114: php-5.5.38-bug72836.patch
+Patch115: php-5.5.38-bug72837.patch
+Patch116: php-5.5.38-bug72838.patch
+Patch117: php-5.5.38-bug72848.patch
+Patch118: php-5.5.38-bug72849.patch
+Patch119: php-5.5.38-bug72850.patch
 
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
@@ -989,6 +1010,28 @@ support for using the enchant library to PHP.
 %if 0%{?rhel} >= 6
 %patch49 -p1 -b .curltlsconst
 %endif
+
+%patch100 -p1 -b .bug66502
+%patch101 -p1 -b .bug70436
+%patch102 -p1 -b .bug72142
+%patch103 -p1 -b .bug72627
+%patch104 -p1 -b .bug72681
+%patch105 -p1 -b .bug72697
+%patch106 -p1 -b .bug72708
+%patch107 -p1 -b .bug72710
+%patch108 -p1 -b .bug72730
+%patch109 -p1 -b .bug72749
+%patch110 -p1 -b .bug72750
+%patch111 -p1 -b .bug72771
+# includes #72799
+%patch112 -p1 -b .bug72790
+%patch113 -p1 -b .bug72807
+%patch114 -p1 -b .bug72836
+%patch115 -p1 -b .bug72837
+%patch116 -p1 -b .bug72838
+%patch117 -p1 -b .bug72848
+%patch118 -p1 -b .bug72849
+%patch119 -p1 -b .bug72850
 
 # Prevent %%doc confusion over LICENSE files
 cp Zend/LICENSE Zend/ZEND_LICENSE
@@ -1872,6 +1915,28 @@ fi
 %files mysqlnd -f files.mysqlnd
 
 %changelog
+* Sun Aug 21 2016 Andy Thompson <andy@webtatic.com> - 5.5.38-2
+- bz2: fix integer overflow in bzdecompress caused heap corruption #72837
+- core: fix Use After Free Vulnerability in unserialize() #70436
+- core: fix PHP Session Data Injection Vulnerability #72681
+- curl: fix integer overflow in curl_escape caused heap corruption #72807
+- dom: fix DOM document dangling reference #66502
+- ereg: fix Integer overflow lead to heap corruption in sql_regcase #72838
+- exif: fix Memory Leakage In exif_process_IFD_in_TIFF #72627
+- gd: fix imagegammacorrect allows arbitrary write access #72730
+- mbstring: fix `mb_ereg` causes buffer overflow on regexp compile error #72710
+- snmp: php_snmp_parse_oid integer overflow in memory allocation #72708
+- standard: fix integer overflow in base64_decode #72836
+- standard: fix integer overflow in quoted_printable_encode #72848
+- standard: fix integer overflow in urlencode #72849
+- standard: fix integer overflow in php_uuencode #72850
+- streams: fix ftps:// wrapper is vulnerable to protocol downgrade attack #72771
+- wddx: fix WDDX Packet Injection Vulnerability in wddx_serialize_value() #72142
+- wddx: fix wddx_deserialize allows illegal memory access #72749
+- wddx: fix wddx_deserialize null dereference #72750
+- wddx: fix wddx_deserialize null dereference with invalid xml #72790
+- wddx: fix wddx_deserialize null dereference in php_wddx_pop_element #72799
+
 * Thu Jul 21 2016 Andy Thompson <andy@webtatic.com> - 5.5.38-1
 - update to php-5.5.38
 
